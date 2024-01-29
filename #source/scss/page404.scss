@@ -1,0 +1,356 @@
+//( Шрифты ) --------------------------------------------------------------------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;600&display=swap");
+//( Обнуление ) -----------------------------------------------------------------------------------------------------------------------------------
+@import "null.scss";
+//( Основной блок ) -------------------------------------------------------------------------------------------------------------------------------
+html,
+body {
+    height: 100%;
+    font-family: "Space mono";
+    font-size: 16px;
+    color: #fff;
+    background: #2b2b2b;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+section {
+    padding: 40px 0px;
+}
+[class$="container"] {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0px 30px;
+    @media screen and (min-width: 480px) {
+        padding: 0px 15px;
+    }
+    @media screen and (min-width: 580px) {
+        max-width: 580px;
+    }
+    @media screen and (min-width: 767.98px) {
+        max-width: 720px;
+    }
+    @media screen and (min-width: 1023.98px) {
+        max-width: 1078px;
+    }
+}
+[class$="title"] {
+    margin: 0px 0px 10px 0px;
+}
+[class$="button"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding: 0px 50px;
+    border-radius: 20px;
+    height: 60px;
+    color: #fff;
+    line-height: 140%;
+    &::before {
+        content: "";
+        display: inline-block;
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+        margin: 0px 12px 0px 0px;
+    }
+}
+[class$="logo"] {
+    display: flex;
+    align-items: center;
+    &::before {
+        content: url(../img/icons/logo_icon.svg);
+        margin: 0px 9px 0px 0px;
+    }
+}
+//( Header ) -------------------------------------------------------------------------------------------------------------------------------
+
+.header {
+    &__container {
+        @media screen and (min-width: 1179.98px) {
+            max-width: 1210px;
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    &__nav {
+        display: none;
+        @media screen and (min-width: 1023.98px) {
+            display: block;
+            a {
+                color: #fff;
+            }
+        }
+    }
+    &__elements {
+        @media screen and (min-width: 1023.98px) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__element {
+        @media screen and (min-width: 1023.98px) {
+            padding: 0px 20px;
+            font-weight: 600;
+            line-height: 140%;
+            text-align: center;
+            &:not(:last-child) {
+                margin: 0px 10px 0px 0px;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__button {
+        background-color: #a259ff;
+        padding: 0px 30px;
+        &::before {
+            background: url("../img/icons/header/sing_up.svg") no-repeat;
+        }
+    }
+    &__menu-burger {
+        display: inline-block;
+        padding: 5px 3px;
+        @media screen and (min-width: 1023.98px) {
+            display: none;
+        }
+        span {
+            display: block;
+            background-color: #fff;
+            border-radius: 10px;
+            &:not(:last-child) {
+                margin: 0px 0px 5px 0px;
+            }
+            &:nth-child(1),
+            &:nth-child(3) {
+                width: 13px;
+                height: 2px;
+            }
+            &:nth-child(2) {
+                width: 18px;
+                height: 2px;
+            }
+        }
+    }
+}
+//( Page ) -------------------------------------------------------------------------------------------------------------------------------
+.page {
+    flex: 1 1 auto;
+}
+
+//( Headline ) -------------------------------------------------------------------------------------------------------------------------------
+.headline {
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 140%;
+        @media screen and (min-width: 1023.98px) {
+            font-size: 38px;
+            line-height: 120%;
+        }
+    }
+    &__text {
+        line-height: 140%;
+        @media screen and (min-width: 1023.98px) {
+            font-size: 22px;
+            line-height: 160%;
+        }
+    }
+}
+//( Subscribe-form ) -------------------------------------------------------------------------------------------------------------------------------
+.subscribe-form {
+    position: relative;
+    &__input {
+        min-width: 100%;
+        font-size: 16px;
+        line-height: 140%;
+        border-radius: 20px;
+        border: 1px solid #858584;
+        padding: 12px 20px;
+        margin: 0px 0px 16px 0px;
+        &::placeholder {
+            color: #2b2b2b;
+        }
+        &::-webkit-input-placeholder {
+            color: #2b2b2b;
+        }
+        &::-ms-input-placeholder {
+            color: #2b2b2b;
+        }
+        &::-moz-placeholder {
+            color: #2b2b2b;
+            opacity: 1;
+        }
+        @media screen and (min-width: 1023.98px) {
+            height: 60px;
+        }
+    }
+
+    &__button {
+        min-width: 100%;
+        background-color: #a259ff;
+        font-size: 16px;
+        height: 46px;
+        &::before {
+            background: url("../img/icons/subscribe/male.svg") no-repeat;
+        }
+        @media screen and (min-width: 1023.98px) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 60px;
+            min-width: auto;
+            padding: 0px 30px;
+        }
+        @media screen and (min-width: 1049.98px) {
+            padding: 0px 50px;
+        }
+    }
+}
+
+//( Error404 ) -------------------------------------------------------------------------------------------------------------------------------
+.error404 {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__number {
+        font-size: 200px;
+        font-weight: 700;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0px 0px 30px 0px;
+    }
+
+    &__text {
+        font-size: 22px;
+        &:not(:last-child) {
+            margin: 0px 0px 10px 0px;
+        }
+    }
+}
+//( Footer ) -------------------------------------------------------------------------------------------------------------------------------
+.footer {
+    background-color: #3b3b3b;
+    color: #ccc;
+    padding: 40px 0;
+
+    &__content {
+        @media screen and (min-width: 1023.98px) {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 30px;
+        }
+    }
+    &__main-info {
+        @media screen and (min-width: 1023.98px) {
+            flex: 0 0 24.72%;
+        }
+    }
+    &__text {
+        margin: 20px 0px;
+        line-height: 140%;
+    }
+
+    &__subscribe {
+        margin: 0px 0px 30px 0px;
+    }
+
+    &__divider {
+        height: 1px;
+        min-width: 100%;
+        background: #858584;
+        margin: 0px 0px 20px 0px;
+    }
+    &__copyright {
+        font-size: 12px;
+        line-height: 110%;
+    }
+    &__subscribe {
+        @media screen and (min-width: 1023.98px) {
+            flex: 0 0 42.55%;
+        }
+    }
+    &__form {
+        position: relative;
+        max-width: 420px;
+    }
+    &__input {
+        height: 60px;
+    }
+    &__button {
+        @media screen and (min-width: 767.98px) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 60px;
+            min-width: auto;
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+.community {
+    &__text {
+        margin: 0px 0px 15px 0px;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        &:not(:last-child) {
+            margin: 0px 10px 0px 0px;
+        }
+    }
+}
+.explore {
+    @media screen and (min-width: 1023.98px) {
+        margin: 0;
+    }
+    margin: 30px 0px;
+    &__title {
+        font-family: "Space Mono";
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0px 0px 20px 0px;
+        color: #fff;
+    }
+
+    &__link {
+        line-height: 140%;
+        &:not(:last-child) {
+            margin: 0px 0px 20px 0px;
+        }
+        a {
+            color: #ccc;
+        }
+    }
+}
+
+.footer-headline {
+    margin: 0px 0px 20px 0px;
+    &__title {
+        font-family: "Space Mono";
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+    }
+}
